@@ -17,7 +17,7 @@
             <button class="p-1 mt-2 text-sky-700">Already have an account?</button>
         </div>
         <div class="flex justify-center items-center p-1">
-            <button class="bg-button mt-2 text-black rounded-xl p-2 w-60">Sign In with Google</button>
+            <button class="flex justify-center items-center bg-button mt-2 text-black rounded-xl p-2 w-60"><img src="/google-icon.svg" alt="SVG Image" class="h-4"/>Sign In with Google</button>
         </div>
       </div>
     </div>
