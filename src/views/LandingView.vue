@@ -8,8 +8,8 @@
             <img src="/Logo-01.png" alt="Logo" class="w-56 h-6 mt-1" />
           </div>
           <div class="w-full flex items-end justify-end p-4 text-white">
-            <button class="flex items-center p-2 text-sm hover:underline-offset-1">Sign In</button>
-            <button @click="showModal = true" class="bg-button flex items-center justify-center p-2 rounded-full text-sm w-36 ml-3">Get Started for Free</button>
+            <button @click="showSignInModal = true" class="flex items-center p-2 text-sm hover:underline-offset-1 ">Sign In</button>
+            <button @click="showSignUpModal = true" class="bg-button flex items-center justify-center p-2 rounded-full text-sm w-36 ml-3">Get Started for Free</button>
           </div>
         </div>
       </nav>
@@ -19,20 +19,24 @@
     </div>
   </div>
   <div class="h-screen">
-    <SignUpModal v-if="showModal" @close-modal="showModal = false" />
+    <SignUpModal v-if="showSignUpModal" @close-modal="showSignUpModal = false" />
+    <SignInModal v-if="showSignInModal" @close-modal="showSignInModal = false" />
   </div>
 </template>
 
 <script>
 import SignUpModal from '@/components/SignUpModal.vue';
+import SignInModal from '@/components/SignInModal.vue';
 
 export default {
   components: {
-    SignUpModal
+    SignUpModal,
+    SignInModal
   },
   data() {
     return {
-      showModal: false
+      showSignUpModal: false,
+      showSignInModal: false
     };
   }
 };

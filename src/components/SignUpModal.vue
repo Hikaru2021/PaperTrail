@@ -7,16 +7,17 @@
         </button>
         <h1 class="text-4xl text-white flex justify-center items-center mb-12">Sign Up!</h1>
         <h1 class="text-sky-600">Email</h1>
-        <input type="text" class="border border-gray-300 p-1 rounded-lg shadow-sm w-full" placeholder="Enter your email">
-        <h1 class="text-sky-600">Username</h1>
-        <input type="text" class="border border-gray-300 p-1 rounded-lg shadow-sm w-full" placeholder="Enter your username">
+        <input type="text" class="border border-gray-300 p-1 rounded-lg shadow-sm w-full" placeholder="Enter your email" v-model="email">
         <h1 class="text-sky-600">Password</h1>
-        <input type="text" class="border border-gray-300 p-1 rounded-lg shadow-sm w-full" placeholder="Enter your password">
+        <input type="password" class="border border-gray-300 p-1 rounded-lg shadow-sm w-full" placeholder="Enter your password" v-model="password">
         <div class="flex justify-center items-center p-1 mt-5">
-            <button class="bg-button rounded-2xl p-2 w-60">Create Account</button>
+            <button @click="register" class="bg-button rounded-xl p-2 w-60">Create Account</button>
         </div>
         <div class="flex justify-center items-center p-1">
             <button class="p-1 mt-2 text-sky-700">Already have an account?</button>
+        </div>
+        <div class="flex justify-center items-center p-1">
+            <button class="bg-button mt-2 text-black rounded-xl p-2 w-60">Sign In with Google</button>
         </div>
       </div>
     </div>
@@ -37,4 +38,29 @@
       background-color: #474973;
     }
   </style>
+
+<script setup>
+import { ref } from "vue";
+import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+import {useRouter} from 'vue-router'
+
+const email = ref("")
+const password = ref ("")
+const router = useRouter()
+
+const register = () => {
+    createUserWithEmailAndPassword(getAuth(), email.value, password.value)
+    .then((date) =>{
+        console.log("Successfully Registered!");
+        router.push('/home')
+    })
+    .catch((error) => {
+        console.log(error.code);
+        alert(error.message);
+    })
+};
+const signInWithGoogle = () => {
+
+}
+</script>
   
