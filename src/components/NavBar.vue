@@ -9,6 +9,6 @@
   <style>
   .navbar {
     /* Add your navbar styles here */
-    height: 52px;
+    height: 49px;
   }
   </style>
