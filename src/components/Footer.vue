@@ -1,7 +1,7 @@
 <template>
     <footer class="bg-gray-200 text-black py-4">
       <div class="container mx-auto px-4">
-        <p class="text-center">&copy; {{ currentYear }} 2023-Present Paper Trail Inc. All rights reserved.</p>
+        <p class="text-center">&copy; {{ currentYear }} - Present Paper Trail Inc. All rights reserved.</p>
       </div>
     </footer>
   </template>
