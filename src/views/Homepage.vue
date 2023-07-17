@@ -4,7 +4,7 @@
       <div class="flex flex-col flex-1">
         <Navbar />
         <div class="flex-1 bg-white">
-          haihuoajbjansdja
+          
         </div>
         <Footer />
       </div>
